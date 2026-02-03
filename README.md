@@ -4,7 +4,7 @@
 
 ## 📂 项目核心文件
 
-本项目仅包含以下 5 个核心脚本：
+本项目包含以下 6 个核心脚本：
 
 | 文件名 | 说明 |
 | :--- | :--- |
@@ -13,6 +13,7 @@
 | **`exit_handler.py`** | **退出句柄**。处理程序优雅退出和状态清理。 |
 | **`order_guard.py`** | **风控守卫**。限制最大交易次数，防止过度交易。 |
 | **`network_diagnostic.py`** | **网络诊断**。测试本机到 Paradex 的延迟和连通性。 |
+| **`get_auth.py`** | **登录提取**。用于提取账号登录状态，保存为 JSON 文件。 |
 
 ## 🚀 快速开始
 
@@ -26,10 +27,12 @@ pip install -r requirements.txt
 playwright install chromium
 ```
 
-### 3. 配置文件准备
-在运行前，请在项目根目录下创建 `data` 文件夹，并放入您的账号认证文件（JSON格式）。
-*   需要包含 Cookies 和 LocalStorage 信息。
-*   文件名示例：`auth_main.json` (主账号), `auth_hedge.json` (对冲账号)。
+### 3. 获取账号认证文件
+使用 `get_auth.py` 脚本提取账号登录状态（需要在有图形界面的环境下运行）：
+```bash
+python3 get_auth.py
+```
+按照提示在浏览器中登录账号，脚本会自动将认证信息保存到 `data/` 目录。
 
 ### 4. 运行
 **启动交易机器人：**
