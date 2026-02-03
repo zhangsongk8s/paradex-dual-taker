@@ -1,0 +1,16 @@
+# 忽略运行时生成的文件
+network_diagnostic_*.json
+*.pyc
+__pycache__/
+
+# 忽略敏感数据目录
+data/
+
+# 忽略日志
+logs/
+*.log
+
+# 忽略编辑器临时文件
+*.swp
+*.swo
+.DS_Store
