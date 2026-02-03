@@ -20,9 +20,14 @@
 ### 1. 环境要求
 *   Python 3.10+
 *   Chrome 浏览器 (用于 Playwright 自动化)
+*   screen (用于后台运行)
 
 ### 2. 安装依赖
 ```bash
+# 安装 screen (Ubuntu/Debian)
+sudo apt update && sudo apt install screen -y
+
+# 安装 Python 依赖
 pip install -r requirements.txt
 playwright install chromium
 ```
@@ -43,6 +48,35 @@ python3 main.py
 **测试网络环境：**
 ```bash
 python3 network_diagnostic.py
+```
+
+## 🖥️ 使用 Screen 后台运行
+
+在 VPS 上使用 `screen` 可以让机器人在后台持续运行，即使断开 SSH 连接也不会中断。
+
+### 常用命令
+
+| 命令 | 说明 |
+| :--- | :--- |
+| `screen -S bot` | 创建名为 "bot" 的新会话 |
+| `python3 main.py` | 在 screen 会话中启动机器人 |
+| `Ctrl+A, D` | 分离会话（机器人继续后台运行） |
+| `screen -r bot` | 重新连接到 "bot" 会话 |
+| `screen -ls` | 查看所有 screen 会话 |
+| `exit` | 在会话内输入，关闭当前会话 |
+
+### 快速启动流程
+```bash
+# 1. 创建新的 screen 会话
+screen -S paradex
+
+# 2. 启动机器人
+python3 main.py
+
+# 3. 按 Ctrl+A 然后按 D，分离会话（机器人后台运行）
+
+# 4. 之后想要查看运行状态，重新连接：
+screen -r paradex
 ```
 
 ## ⚠️ 免责声明
