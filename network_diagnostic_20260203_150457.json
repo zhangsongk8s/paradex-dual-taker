@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-02-03T15:04:57.302373",
+  "results": {
+    "dns": {
+      "domain": "app.paradex.trade",
+      "ip": "3.173.238.118",
+      "time": "4.69ms",
+      "status": "✅"
+    },
+    "web": {
+      "url": "https://app.paradex.trade",
+      "status_code": 200,
+      "time": "53.32ms",
+      "status": "✅"
+    },
+    "browser": {
+      "load_time": "192.82ms",
+      "js_time": "47.27ms",
+      "elements": [
+        [
+          "Market 标签",
+          "✅"
+        ],
+        [
+          "数量输入框",
+          "✅"
+        ],
+        [
+          "Order Book",
+          "✅"
+        ]
+      ],
+      "status": "✅"
+    },
+    "geo": {
+      "ip": "13.114.161.39",
+      "location": "Tokyo, JP",
+      "isp": "AS16509 Amazon.com, Inc."
+    }
+  }
+}
